@@ -3,9 +3,11 @@ package com.example.firebasememorybox;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Memory {
-    String name, desc;
-    int rating, imageResourceId;
+public class Memory implements Parcelable{
+    private String name;
+    private String desc;
+    private int rating;
+    private int imageResourceId;
 
     public Memory(String name, String desc, int rating, int imageResourceId) {
         this.name = name;
@@ -20,8 +22,8 @@ public class Memory {
         this.rating = rating;
         this.imageResourceId = 0;
     }
+
     // this code is needed for the Food class to work with Parcelable
-    // only changes necessary is to switch class name if necessary
     public static final Parcelable.Creator<Memory> CREATOR = new
             Parcelable.Creator<Memory>() {
 
@@ -43,13 +45,15 @@ public class Memory {
      *
      * @param parcel    the parcel that is received from the intent
      */
-    //to avoid errors, keep order of parameters the same in all if thse methods. should match your food constructor
+
     public Memory(Parcel parcel) {
         name = parcel.readString();
-        rating = parcel.readInt();
         desc = parcel.readString();
+        rating = parcel.readInt();
         imageResourceId = parcel.readInt();
     }
+
+
     /**
      * This is what is used when we send the Food object through an intent
      * It is also a method that is part of the Parceable interface and is needed
@@ -57,20 +61,25 @@ public class Memory {
      * other Food constructor that accepts a Parcel reference can "unpack it"
      *
      */
+    @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeInt(rating);
         dest.writeString(desc);
+        dest.writeDouble(rating);
         dest.writeInt(imageResourceId);
+    }
+    public Memory() {
+        name = "";
+        desc = "";
+        rating = 0;
+        imageResourceId = 0;
+    }
+    public String toString(){
+        return this.name;
     }
     // A default constructor is required for the Parceable interface to work
     // if you don't have a default constructor, your code will not run
-    public Memory() {
-        name = "";
-        rating = 0;
-        desc = "";
-        imageResourceId = 0;
-    }
+
     /**
      * This method is required for the Parceable interface.  As of now, this method * is in the default state and doesn't really do anything.
      *
