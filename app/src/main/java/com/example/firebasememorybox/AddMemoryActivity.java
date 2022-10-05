@@ -9,10 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddMemoryActivity extends AppCompatActivity {
-// How to implement a Spinner
-    // https://www.tutorialspoint.com/how-to-get-spinner-value-in-android
+public class AddMemoryActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
 
+    // How to implement a Spinner
+    // https://www.tutorialspoint.com/how-to-get-spinner-value-in-android
+    //thanks kyle, not praneet
     // How to style the spinner
     // https://www.youtube.com/watch?v=7tnlh1nVkuE
 
@@ -25,7 +26,7 @@ public class AddMemoryActivity extends AppCompatActivity {
         // this attaches my spinner design (spinner_list.xml) and my array of spinner choices(R.array.memoryRating)
         spinner = findViewById(R.id.memorySpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_list,
-                getResources().getStringArray(R.array.memoryRating));
+                getResources().getStringArray(R.array.memoryArray));
 
         // this attaches my custom row design (how I want each row to look)
         adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_row);
