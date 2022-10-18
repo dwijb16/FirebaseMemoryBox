@@ -8,14 +8,12 @@
 
     <Spinner
         android:id="@+id/memorySpinner"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="357dp"
+        android:layout_height="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -43,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="0.261" />
 
     <EditText
         android:id="@+id/memoryDesc"
@@ -57,6 +55,19 @@
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintVertical_bias="0.387" />
+
+    <Button
+        android:id="@+id/addmem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addMemoryButtonClicked"
+        android:text="Add Memory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
