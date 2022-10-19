@@ -17,7 +17,8 @@ public class SelectActionActivity extends AppCompatActivity {
     }
 
     public void showMemories(View view) {
-
+        Intent I = new Intent(SelectActionActivity.this, ViewAllMemoriesActivity.class);
+        startActivity(I);
     }
 
     public void addMemories(View view) {

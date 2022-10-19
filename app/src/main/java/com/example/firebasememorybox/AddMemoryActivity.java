@@ -77,8 +77,8 @@ public class AddMemoryActivity extends AppCompatActivity implements AdapterView.
 //            }
 //        }
 //
-//        Memory m = new Memory(memoryRatingNum, memName, memDesc);
-//        SignInActivity.firebaseHelper.addData(m);
+        Memory m = new Memory(memoryRatingNum, memName, memDesc);
+       SignInActivity.firebaseHelper.addData(m);
 //
         memoryName.setText("");
         memoryDesc.setText("");

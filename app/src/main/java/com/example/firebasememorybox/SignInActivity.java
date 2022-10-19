@@ -101,7 +101,8 @@ public class SignInActivity extends AppCompatActivity  {
                                 // Sign up successful, update UI with the currently signed in user's info
                                 firebaseHelper.updateUid(firebaseHelper.getmAuth().getUid());
                                 Log.d(TAG, userName + " created and logged in");
-
+                                firebaseHelper.addUserToFirestore(userName, firebaseHelper.getmAuth().getUid());
+                                firebaseHelper.attachReadDataToUser();
                                 // we will implement this later
                                 // updateIfLoggedIn();
                                 // firebaseHelper.attachReadDataToUser();
